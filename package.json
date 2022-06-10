@@ -1,0 +1,28 @@
+{
+  "name": "phase-4-deploying-app-demo",
+  "description": "Build scripts for Heroku",
+  "engines": {
+    "node": "16.x"
+  },
+  "scripts": {
+    "build": "npm install --prefix client && npm run build --prefix client",
+    "clean": "rm -rf public",
+    "deploy": "cp -a client/build/. public/",
+    "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@kurkle/color": "^0.2.1",
+    "@mui/material": "^5.8.1",
+    "chart.js": "^3.7.1",
+    "chartjs-adapter-luxon": "^1.1.0",
+    "esm": "^3.2.25",
+    "luxon": "^2.4.0",
+    "react-chartjs-2": "^4.1.0",
+    "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "sass": "^1.52.1"
+  }
+}
